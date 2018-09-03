@@ -3,4 +3,5 @@
 This repository contains some examples of Docker commands.
 
 Here's a list of the current tutorials:
-- Exploring Redis
+- Exploring Redis (basic docker commands)
+- Exploring PostgreSQL (introduces volumes)
