@@ -3,7 +3,7 @@
 This tutorial shows how you can use Docker to explore Redis. You can run the commands with Docker installed, or Docker for Windows in Linux mode. But you can also use [Play with Docker](https://labs.play-with-docker.com) to try this out.
 
 ### Start a new container running Redis
-Here we're giving it a name (redis1) and exposing port 6379 (the redis default)
+Here we're giving it a name (`redis1`) and exposing port 6379 (the redis default)
 
 ```
 docker run -d -p 6379:6379 --name redis1 redis
