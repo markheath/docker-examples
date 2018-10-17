@@ -133,6 +133,7 @@ Invoke-RestMethod -Method Delete -Uri "$($eshost):9200/customer?pretty"
 Using this [accounts.json](https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json#) file.
 
 ```bash
+curl https://raw.githubusercontent.com/elastic/elasticsearch/master/docs/src/test/resources/accounts.json# > accounts.json
 curl -H "Content-Type: application/json" -XPOST "localhost:9200/bank/_doc/_bulk?pretty&refresh" --data-binary "@accounts.json"
 ```
 
@@ -205,7 +206,8 @@ Invoke-RestMethod -Method Post -Uri "$($eshost):9200/bank/_search" -ContentType 
 curl -X GET "localhost:9200/bank/_search" -H 'Content-Type: application/json' -d'
 {
   "query": { "match_all": {} },
-  "_source": ["account_number", "balance"]
+  "from": 10,
+  "size": 10
 }
 '
 ```
